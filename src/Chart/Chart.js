@@ -47,7 +47,7 @@ function Chart() {
         <div
           onClick={() => alert(" clicked")}
           style={{
-            fontSize: "28px",
+            fontSize: "22px",
             fontWeight: "200",
             transition: "0.2s",
             color: "#333",
@@ -58,14 +58,14 @@ function Chart() {
           <img
     src={download_image}
     alt="download"
-    style={{ width: "28px", height: "27px", objectFit: "contain" }}
+    style={{ width: "26px", height: "27px", objectFit: "contain" }}
   /> Factsheet
         </div>
-        <br></br>
+        {/* <br/> */}
         <div
           onClick={() => alert(" clicked")}
           style={{
-            fontSize: "28px",
+            fontSize: "22px",
             fontWeight: "200",
             transition: "0.2s",
             color: "#333",
@@ -76,15 +76,15 @@ function Chart() {
          <img
     src={download_image}
     alt="download"
-    style={{ width: "28px", height: "27px", objectFit: "contain" }}
+    style={{ width: "26px", height: "27px", objectFit: "contain" }}
   /> Methodolgy
             
         </div>
-        <br></br>
+        {/* <br></br> */}
         <div
           onClick={() => alert(" clicked")}
           style={{
-            fontSize: "28px",
+            fontSize: "22px",
             fontWeight: "200",
             transition: "0.2s",
             color: "#333",
@@ -96,7 +96,7 @@ function Chart() {
           <img
     src={download_image}
     alt="download"
-    style={{ width: "28px", height: "27px", objectFit: "contain" }}
+    style={{ width: "26px", height: "27px", objectFit: "contain" }}
   /> Index Constituent
         </div>
       </div>

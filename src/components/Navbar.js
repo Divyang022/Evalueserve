@@ -8,8 +8,8 @@ function Navbar() {
       className="navbar navbar-expand-lg fixed-top px-3 blurred"
       style={{
         minHeight: "100px",
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
-        backdropFilter: "blur(3px)"
+        backgroundColor: "white",
+        // backdropFilter: "blur(3px)"
       }}
     >
       <div className="container-fluid">

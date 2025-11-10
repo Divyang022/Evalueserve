@@ -24,12 +24,14 @@ function App() {
       {link === "Home" && (
         <div className="App">
           <Navbar />
-
           <div className="slides">
             <Slides />
           </div>
 
-          <div className="d-flex flex-row mt-0 justify-content-evenly">
+          <div className="d-flex flex-row justify-content-evenly"
+            style = {{
+              marginTop: "-100px"  
+            }}>
             <Cards title="Pre-built Screen" image={preBuilt} />
             <Cards title="Create custom filter" image={customImg} />
           </div>

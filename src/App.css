@@ -142,20 +142,26 @@
 }
 
 .slides{
-  padding-top: 110px;
+  margin-top: 110px;
+  height: 450px;
+}
+.slideshow{
+  height: 100%;
 }
 .slide-img{
-  height: 90vh;
+  height: 450px;
   width: 100%;
 }
 .media-page{
-  height: 150vh;
+  height: auto;
+  padding-bottom: 2%;
   width: 100%;
-  background-color: #d8d2c2;
+  background-color: #e2e0d9;
 }
 .empty-page{
-  padding-top: 8%;
-  height: 30vh;
+  padding-top: 6%;
+  padding-bottom: 3%;
+  /* height: 30vh; */
   width: 100%;
 }
 #screener-link {
@@ -218,10 +224,10 @@ padding-bottom: 60px;
 
 /* Premium Gradient Heading */
 .title {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 900;
-  margin-bottom: 15px;
-  background: linear-gradient(90deg, #0a1a2f, #0056ff);
+  margin-bottom: 0px;
+  background-color: rgb(55, 18, 100);
   -webkit-background-clip: text;
   color: transparent;
   letter-spacing: 1.5px;
@@ -231,7 +237,7 @@ padding-bottom: 60px;
 
 /* Premium subtext */
 .subtitle {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 20px;
   color: black;
   max-width: 80%;
