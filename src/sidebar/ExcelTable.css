@@ -28,7 +28,7 @@
   color: #333;
 }
 
-.excel-table tr:nth-child(even) td {
+.excel-table tr:nth-child(even) td:not(.first-column) {
   background-color: #f9f6fc; /* Light purple tint */
 }
 
@@ -39,4 +39,12 @@
 
 .excel-table tr:last-child td {
   border-bottom: none;
+}
+/* Existing styles remain same */
+
+.transpose-table .first-column {
+  background-color: #5a2d82; /* Purple */
+  color: #fff; /* White text */
+  font-weight: 600;
+  text-transform: capitalize;
 }
