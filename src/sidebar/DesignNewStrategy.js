@@ -4,6 +4,7 @@ import RadioButton from "./RadioButton";
 import { useState } from "react";
 import ExcelTable from "./ExcelTable";
 import ExcelTransposeTable from "./ExcelTransposeTable";
+import ScheduleForm from "./ScheduleForm";
 
 function App() {
   const [isDialogOpen, setDialogOpen] = useState(false);
@@ -56,83 +57,40 @@ function App() {
     { Currency: "", Static: "", Action: "" },
     { Currency: "", Static: "", Action: "" },
     { Currency: "", Static: "", Action: "" },
+    { Currency: "", Static: "", Action: "" },
+    { Currency: "", Static: "", Action: "" },
+    { Currency: "", Static: "", Action: "" },
+    { Currency: "", Static: "", Action: "" },
   ];
 
   return (
     <div className="container">
       {/* Section 1 */}
-      <div className="section section1">
-        <RadioButton
-          options={["Replicate Existing Strategy", "Create New Strategy"]}
-          labelName={"strategyType"}
-        ></RadioButton>
-      </div>
-
-      {/* Section 2 */}
-      <div className="section">
-        <div className="section2">
+      <div className="section2">
+        <div className="section2-content">
+          <label>SELECT 1: </label>
+          <RadioButton
+            options={["Replicate Existing Strategy", "Create New Strategy"]}
+            labelName={"strategyType"}
+          ></RadioButton>
+        </div>
+        <div className="section2-content">
+          <label>SELECT 2: </label>
           <RadioButton
             options={["Index", "Basket", "TWAPS/VWAPS"]}
             labelName={"assetType1"}
           ></RadioButton>
         </div>
-        <div className="section2">
+        <div className="section2-content">
+          <label>SELECT 3: </label>
           <RadioButton
             options={["Eq", "Eq Drv", "Rates", "Comm", "Multi Asset"]}
             labelName={"assetType2"}
           ></RadioButton>
         </div>
       </div>
-
-      {/* Section 3 */}
-      <div className="section section3">
-        <div className="col">
-          <div className="row">
-            <label>Select Underlying Strategy:</label>
-            <select>
-              <option>Dropdown</option>
-              <option>Strategy 1</option>
-            </select>
-          </div>
-
-          <div className="row">
-            <label>Sub Category:</label>
-            <select>
-              <option>Dropdown</option>
-              <option>Sub 1</option>
-            </select>
-          </div>
-
-          <div className="row">
-            <label>Rebalance:</label>
-            <input type="text" />
-          </div>
-        </div>
-        <div className="col">
-          <label>Basic Description:</label>
-          <br />
-          <input
-            type="textarea"
-            placeholder="Basic Description"
-            style={{ height: "60px", width: "370px" }}
-          />
-          <br />
-          <label style={{ marginTop: "10px" }}>
-            holiday o calc holt tradg holiday
-          </label>
-        </div>
-        <div className="col">
-          <button className="btn" onClick={() => setDialogOpen(true)}>
-            UI Editor
-          </button>
-          <DialogBox
-            isOpen={isDialogOpen}
-            onClose={() => setDialogOpen(false)}
-            title="Hello Vikash!"
-          >
-            <p>This is a simple dialog box in React.</p>
-          </DialogBox>
-        </div>
+      <div className="section">
+          <ScheduleForm></ScheduleForm>
       </div>
       <div className="section section4">
         <div className="row">
@@ -149,16 +107,14 @@ function App() {
           </DialogBox>
         </div>
         <div style={{ width: "100%" }}>
-          <div style={{ width: "600px", height: "auto", margin: "20px 50px" }}>
+          <div style={{ width: "600px", height: "auto", margin: "10px 50px" }}>
             <ExcelTable data={sampleData} />
           </div>
         </div>
       </div>
       <div className="section section5">
         <h4>Parameters</h4>
-        {/* <div style={{width: "700px"}}> */}
         <ExcelTransposeTable data={sampleTransData} />
-        {/* </div> */}
         <button className="btn" style={{ width: "150px" }}>
           Edit and Update
         </button>
@@ -180,11 +136,62 @@ function App() {
           </div>
         </div>
       </div>
-        <div className="generate-btn">
-          <button className="btn">Generate Backtest</button>
-        </div>
+      <div className="generate-btn">
+        <button className="btn">Generate Backtest</button>
+      </div>
     </div>
   );
 }
 
 export default App;
+
+    //   {/* Section 3 */}
+    //   {/* <div className="section section3">
+    //     <div className="col">
+    //       <div className="row">
+    //         <label>Select Underlying Strategy:</label>
+    //         <select>
+    //           <option>Dropdown</option>
+    //           <option>Strategy 1</option>
+    //         </select>
+    //       </div>
+
+    //       <div className="row">
+    //         <label>Sub Category:</label>
+    //         <select>
+    //           <option>Dropdown</option>
+    //           <option>Sub 1</option>
+    //         </select>
+    //       </div>
+
+    //       <div className="row">
+    //         <label>Rebalance:</label>
+    //         <input type="text" />
+    //       </div>
+    //     </div>
+    //     <div className="col">
+    //       <label>Basic Description:</label>
+    //       <br />
+    //       <input
+    //         type="textarea"
+    //         placeholder="Basic Description"
+    //         style={{ height: "60px", width: "370px" }}
+    //       />
+    //       <br />
+    //       <label style={{ marginTop: "10px" }}>
+    //         holiday o calc holt tradg holiday
+    //       </label>
+    //     </div>
+    //     <div className="col">
+    //       <button className="btn" onClick={() => setDialogOpen(true)}>
+    //         UI Editor
+    //       </button>
+    //       <DialogBox
+    //         isOpen={isDialogOpen}
+    //         onClose={() => setDialogOpen(false)}
+    //         title="Hello Vikash!"
+    //       >
+    //         <p>This is a simple dialog box in React.</p>
+    //       </DialogBox>
+    //     </div>
+    //   </div> */}

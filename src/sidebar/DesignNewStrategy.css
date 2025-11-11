@@ -38,7 +38,7 @@
 .section {
   margin-bottom: 20px;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   padding: 10px;
   border: 1px solid #000;
 }
@@ -46,15 +46,30 @@
 .section1 {
   display: flex;
   gap: 20px;
-  justify-content: center;
 }
 
 .section2 {
+  padding: 10px;
+  border: 1px solid #000;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-bottom: 15px;
+  gap: 10px;
+  justify-content: left;
+  width: 100%;
+}
+.section2-content {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 15px;
   gap: 10px;
-  justify-content: center;
+  justify-content: left;
+  align-items: baseline;
+  width: 100%;
+}
+.section2-content label{
+  font-size: 14px;
 }
 
 .radio-label {
@@ -117,7 +132,6 @@
 .section4{
     display: flex;
     flex-direction: column;
-    row-gap: 15px;
 }
 .section4 .row{
     width: 90%;
@@ -127,21 +141,27 @@
     align-self: center;
 }
 .section4 h4{
+    font-size: 20px;
     width: 290px;
     margin-top: 10px;
 }
 .btn{
-    width: auto;
+  width: auto;
 }
 
 .section5{
-    padding: 20px 60px;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    justify-content: center;
-    align-items: center;
-    row-gap: 20px;
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: center;
+  align-items: start;
+  row-gap: 20px;
+}
+.section5 h4{
+    font-size: 20px;
+    width: 290px;
+    margin-top: 10px;
 }
 .section6 {
   border: 1px solid #000;
