@@ -2,7 +2,9 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import { useState } from "react";
 import Navbar from "./components/Navbar";
-import Cards from "./components/Cards";
+import Card1 from "./components/Card1";
+import Card2 from "./components/Card2";
+import Card3 from "./components/Card3";
 import Slides from "./components/Slides";
 import MediaCoverage from "./components/MediaCoverage";
 import customImg from "./components/images/custom-filter.webp";
@@ -40,8 +42,9 @@ function App() {
               marginTop: "-150px",
             }}
           >
-            <Cards title="Pre-built Screen" image={preBuilt} />
-            <Cards title="Create custom filter" image={customImg} />
+            <Card1  />
+            <Card3/>
+            <Card2 />
           </div>
 
           <MediaCoverage setLink={setLink} setPage={setPage} />
