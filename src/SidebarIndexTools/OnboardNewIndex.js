@@ -39,83 +39,91 @@ export default function OnboardNewIndex2() {
     },
   };
 
-  const cancelled = Math.floor(remaining * 0.25);
-  const onHold = Math.floor(remaining * 0.25);
-  const inProgress = remaining - cancelled - onHold; // to sum up exactly remaining
 
-  const barData = {
-    labels: ["Cancelled", "On Hold", "In Progress"],
+  const rows = [
+    { label: "Row 1", completed: 20, incomplete: 80 },
+    { label: "Row 2", completed: 40, incomplete: 60 },
+    { label: "Row 3", completed: 70, incomplete: 30 },
+  ];
+
+  const data_stackbar = {
+    labels: rows.map((r) => r.label),
     datasets: [
       {
-        label: "Tasks",
-        data: [cancelled, onHold, inProgress],
-        backgroundColor: ["#FF6384", "#FFCE56", "#4BC0C0"],
+        label: "Completed",
+        data: rows.map((r) => r.completed),
+        backgroundColor: "#36A2EB",
+      },
+      {
+        label: "Incomplete",
+        data: rows.map((r) => r.incomplete),
+        backgroundColor: "#FF6384",
       },
     ],
   };
-const barOptions = {
-    indexAxis: "y", // horizontal
+
+  const options_stackbar = {
+    indexAxis: "y", // Horizontal
     responsive: true,
     plugins: {
-      legend: { display: false },
-      tooltip: { enabled: true },
+      legend: { position: "bottom" },
     },
     scales: {
       x: {
+        stacked: true,
         beginAtZero: true,
+        max: 100, // percentage
+      },
+      y: {
+        stacked: true,
       },
     },
   };
 
 
+
+
+
   return (
-    <div style={{ padding: "20px" , width: "70%"}}>
+    <div style={{ padding: "20px" }}>
       {/* ✅ TOP: Pie Chart + 2 Text Areas */}
       <div
         style={{
           display: "flex",
-          gap: "120px",
+          gap: "200px",
           marginBottom: "50px",
-          marginLeft: "170px",
+          marginLeft: "100px",
           marginRight: "200px",
           marginTop: "20px",
           alignItems: "center",
+          
         }}
       >
         {/* Pie Chart */}
-        <div style={{ width: "200px", textAlign: "center" }}>
-          <Pie data={data} options={options} />
-          <p style={{ marginTop: "10px", fontWeight: "bold" }}>
-            <div
-              style={{
-                textAlign: "center",
-                marginTop: "10px",
-                fontWeight: "bold",
-              }}
-            >
-              <span style={{ color: "#36A2EB", marginRight: "10px" }}>
-                {completed}% Completed
-              </span>
-              <span style={{ color: "#FF6384" }}>
-                {100 - completed}% Remaining
-              </span>
+        <div style={{ display: "flex", gap: "60px", alignItems: "center"}}>
+          {/* Pie Chart */}
+          <div style={{ width: "120px", textAlign: "center" }}>
+            <Pie data={data} options={options} />
+            <div style={{ textAlign: "center", marginTop: "10px", fontWeight: "bold" }}>
+            
             </div>
-          </p>
-          
-        </div>
-        <div style={{ width: "250px", textAlign: "center" }}>
-          <Bar data={barData} options={barOptions} />
+          </div>
+
+          {/* Bar Chart on Right */}
+          <div style={{ width: "260px" }}>
+            <Bar data={data_stackbar} options={options_stackbar} />
+          </div>
         </div>
 
-        
-        {/* Horizontal Bar Chart */}
-        
+
+
+    
+
 
         {/* Text Area 2 */}
-        <textarea placeholder="Text Area 2" rows="4" className="form-control" />
+        <textarea placeholder="Text Area 2" rows="4" className="form-control"  />
 
-        {/* Text Area 3 */}
-        <textarea placeholder="Text Area 3" rows="4" className="form-control" />
+
       </div>
 
       {/* ✅ BIG TABLE */}

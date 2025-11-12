@@ -14,6 +14,8 @@ import zoomPlugin from 'chartjs-plugin-zoom';
 const verticalLinePlugin = {
   id: 'verticalLine',
   afterDraw: (chart) => {
+
+    if (!chart.scales?.y) return;
     if (chart.tooltip?._active && chart.tooltip._active.length) {
       const ctx = chart.ctx;
       const activePoint = chart.tooltip._active[0];
